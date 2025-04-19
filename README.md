@@ -1,25 +1,34 @@
-# bun-template
+# translation-sheet
 
-[![npm version](https://badge.fury.io/js/bun-template.svg)](https://www.npmjs.com/package/bun-template)
+[![npm version](https://badge.fury.io/js/@dobuki%2Ftranslation-sheet.svg)](https://www.npmjs.com/package/@dobuki/translation-sheet)
 
-Bun template for creating projects using bunjs
+Use google sheet to store KEY->VALUE for translations.
 
 ![icon](icon.png)
 
-## Build
+## Setup Google Sheets API
 
-`./build.sh`
+Under the hood, this uses Google sheet API. So you'll need to set it up.
 
-## Run example
+Follow these instructions: [Google Sheet API setup](https://github.com/jacklehamster/google-sheet-db?tab=readme-ov-file#setup)
 
-`./sample.sh`
+## Google Sheet format
 
-[example](example)
+Your sheet must be formatted like this sample sheet:
+<https://docs.google.com/spreadsheets/d/1VwYU7nTSlwhi2iBSFvYBnuhxPUJdIYwE9qbKuVwDk04>
 
-## Github Source
+Include the following columns:
 
-<https://github.com/jacklehamster/bun-template/>
+- **TAG**: Tag representing a string.
+- **VALUE**: Text in default language.
 
-## Create a new repo
+Other lang can be used.
 
-[Create repo with this template](https://github.com/new?owner=jacklehamster&visibility=public&template_owner=jacklehamster&template_name=bun-template)
+Note: Don't share the spreadsheetID, keep in hidden and authorize your Google Cloud Api to access it.
+
+## Usage
+
+```javascript
+  const translator = await getTranslator({ sheetId: SHEET_ID, sheetName: "test" });
+  expect(translator.translate("TEST_TAG")).toBe("This is a test");
+```
