@@ -1,25 +1,16 @@
 {
-  "name": "bun-template",
+  "name": "@dobuki/translation-sheet",
   "module": "src/index.ts",
-  "description": "Bun template for creating projects using bunjs",
-  "version": "1.0.66",
-  "keywords": [
-    "bun",
-    "bunjs",
-    "typescript",
-    "template",
-    "npm",
-    "np",
-    "publish",
-    "git"
-  ],
+  "description": "Get strings from google sheets",
+  "version": "1.0.0",
+  "keywords": [],
   "repository": {
     "type": "git",
-    "url": "git@github.com:jacklehamster/bun-template.git"
+    "url": "https://github.com/jacklehamster/translation-sheet.git"
   },
-  "homepage": "https://jacklehamster.github.io/bun-template/",
+  "homepage": "https://jacklehamster.github.io/translation-sheet/",
   "author": {
-    "name": "Jack Le Hamster",
+    "name": "Vincent Le Quang",
     "email": "jacklehamster@gmail.com"
   },
   "license": "MIT",
@@ -46,5 +37,9 @@
   ],
   "devDependencies": {
     "@dobuki/dev-dependencies": "latest"
+  },
+  "dependencies": {
+    "@dobuki/google-sheet-db": "^1.0.20",
+    "dotenv": "^16.5.0"
   }
 }

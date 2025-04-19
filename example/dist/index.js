@@ -23650,25 +23650,9 @@ var require_jsx_dev_runtime = __commonJS((exports, module) => {
 // src/index.tsx
 var import_react = __toESM(require_react(), 1);
 var import_client = __toESM(require_client(), 1);
-
-// ../dist/index.js
-class l {
-  static hello() {
-    return "Hello World!";
-  }
-}
-
-// src/index.tsx
 var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
 var div = document.body.appendChild(document.createElement("div"));
 var root = import_client.createRoot(div);
 root.render(location.search.indexOf("strict-mode") >= 0 ? /* @__PURE__ */ jsx_dev_runtime.jsxDEV(import_react.StrictMode, {
-  children: /* @__PURE__ */ jsx_dev_runtime.jsxDEV(jsx_dev_runtime.Fragment, {
-    children: l.hello()
-  }, undefined, false, undefined, this)
-}, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime.jsxDEV(jsx_dev_runtime.Fragment, {
-  children: l.hello()
-}, undefined, false, undefined, this));
-export {
-  l as Hello
-};
+  children: /* @__PURE__ */ jsx_dev_runtime.jsxDEV(jsx_dev_runtime.Fragment, {}, undefined, false, undefined, this)
+}, undefined, false, undefined, this) : /* @__PURE__ */ jsx_dev_runtime.jsxDEV(jsx_dev_runtime.Fragment, {}, undefined, false, undefined, this));
