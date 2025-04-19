@@ -31,7 +31,7 @@ export async function getTranslator({ sheetId, sheetName, credentials }: Transla
   });
   return {
     translate(tag: string, lang: string = "VALUE"): string {
-      return keyValue[tag][lang];
+      return keyValue[tag]?.[lang] ?? tag;
     }
   };
 }
