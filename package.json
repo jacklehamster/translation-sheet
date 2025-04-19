@@ -2,7 +2,7 @@
   "name": "@dobuki/translation-sheet",
   "module": "src/index.ts",
   "description": "Get strings from google sheets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [],
   "repository": {
     "type": "git",
