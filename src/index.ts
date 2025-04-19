@@ -30,8 +30,8 @@ export async function getTranslator({ sheetId, sheetName, credentials }: Transla
     keyValue[translation.TAG] = translation;
   });
   return {
-    translate(tag: string, lang: string = "VALUE"): string {
-      return keyValue[tag]?.[lang] ?? tag;
+    translate(tag: string, lang: string = "VALUE", defaultValue?: string): string {
+      return keyValue[tag]?.[lang] ?? defaultValue;
     }
   };
 }
