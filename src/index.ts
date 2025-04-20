@@ -23,10 +23,9 @@ export interface TranslationConfig {
   credentials?: string;
 }
 
-export async function getTranslator({ sheetId, sheetName, credentials }: TranslationConfig) {
-  const translations = await fetchTranslations(sheetId, { sheetName, credentials });
+export async function getTranslatorFromTranslations(translations?: Translation[]) {
   const keyValue: Record<string, Translation> = {};
-  translations?.[sheetName].forEach(translation => {
+  translations?.forEach(translation => {
     keyValue[translation.TAG] = translation;
   });
   return {
@@ -34,4 +33,9 @@ export async function getTranslator({ sheetId, sheetName, credentials }: Transla
       return keyValue[tag]?.[lang] ?? defaultValue;
     }
   };
+}
+
+export async function getTranslator({ sheetId, sheetName, credentials }: TranslationConfig) {
+  const translations = await fetchTranslations(sheetId, { sheetName, credentials });
+  return getTranslatorFromTranslations(translations?.[sheetName]);
 }
