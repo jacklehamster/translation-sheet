@@ -11,8 +11,7 @@
     "target": "esnext",
     "moduleResolution": "bundler",
     "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
+    "noEmit": false,
     "composite": true,
     "strict": true,
     "downlevelIteration": true,
@@ -24,5 +23,5 @@
     "types": ["bun-types"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx"],
+  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx"]
 }
